@@ -26,11 +26,12 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60);
             recipe.AddStep("Dejar enfriar", 60);
 
+            IRecipieContent recipieContent = recipe;
             IPrinter printer;
             printer = new ConsolePrinter();
-            printer.PrintRecipe(recipe);
+            printer.PrintRecipe(recipieContent);
             printer = new FilePrinter();
-            printer.PrintRecipe(recipe);
+            printer.PrintRecipe(recipieContent);
         }
 
         private static void PopulateCatalogs()
